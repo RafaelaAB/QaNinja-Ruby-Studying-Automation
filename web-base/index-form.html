@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>WebBase form Rafaela Batista</title> <!-- nome da página web -->
+        <script src="js/vue.js"></script> <!-- framework JS -->
+    </head>
+
+    <body>
+        <div id="app"> <!-- para o vuejs funcionar é necessário ter uma div principal, sendo fundamental e todo código deve ficar abaixo. -->
+
+            <h1>Cadastro de Alunos</h1> <!-- titulo da página  -->
+        <form> <!-- criando formulário -->
+            <label for="nomeCompleto">Nome Completo</label> <!-- define o nome do campo criado para inserção do texto -->
+            <input name="nomeCompleto" type="text"> <!-- cria o campo para a inserção do texto -->
+
+            <label for="email">Email</label>
+            <input name="email" type="text">
+
+            <label for="numeroMatricula">Numero da Matricula</label>
+            <input name="numeroMatricula" type="text">
+
+            <input type="button" value="Cadastrar"> <!-- cria o botão para salvar o que foi inserido -->
+        </form>
+
+        <div>
+            <table> <!-- criando a tabela para exibir os valores inseridos -->
+                <thead> <!-- define titulo da tabela -->
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Matricula</th>
+                </thead>
+                <tbody> <!-- exibir valores na tabela -->
+                    <tr> <!-- cada tr representa uma linha da tabela -->
+                        <td>Rafaela Andrade</td> 
+                        <td>rafaela@gmail.com</td> 
+                        <td>123456</td> 
+                    </tr>
+
+                    <tr>  <!-- cada tr representa uma linha da tabela -->
+                        <td>Jose Rosa</td> 
+                        <td>jose@gmail.com</td> 
+                        <td>123457</td> 
+                    </tr>
+
+                    <tr>  <!-- cada tr representa uma linha da tabela -->
+                        <td>Ardalinda Andrade</td> 
+                        <td>ardalinda@gmail.com</td> 
+                        <td>173456</td> 
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+
+        <script> /* aqui será vinculado o código VUEJS com a página HTML */
+            var app = new Vue({
+                el: "#app" /* #APP é um seletor CSS para o VueJS encontrar a div que tem a aplicação atraves do ID */
+            })
+        </script>
+    </body>
+</html>
