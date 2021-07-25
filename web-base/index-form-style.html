@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>WebBase form Rafaela Batista</title> <!-- nome da página web -->
+        <script src="js/vue.js"></script> <!-- framework JS -->
+    </head>
+
+    <body>
+        <div id="app"> <!-- para o vuejs funcionar é necessário ter uma div principal, sendo fundamental e todo código deve ficar abaixo. -->
+
+            <h1>Cadastro de Alunos</h1> <!-- titulo da página  -->
+        <form> <!-- criando formulário -->
+            <label for="nomeCompleto">Nome Completo</label> <!-- define o nome do campo criado para inserção do texto -->
+            <input name="nomeCompleto" type="text"> <!-- cria o campo para a inserção do texto -->
+
+            <label for="email">Email</label>
+            <input name="email" type="text">
+
+            <label for="numeroMatricula">Numero da Matricula</label>
+            <input name="numeroMatricula" type="text">
+
+            <input type="button" value="Cadastrar"> <!-- cria o botão para salvar o que foi inserido -->
+        </form>
+
+        <div>
+            <table class="table"> <!--foi definido uma classe para a tabela para utilizar atraves do CSS selector-->
+                <thead> <!-- define titulo da tabela -->
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Matricula</th>
+                </thead>
+                <tbody> <!-- exibir valores na tabela -->
+                    <tr v-for="aluno in alunos"> <!-- onde alunoS é a fonte de dados e aluno é o apelido para o elemento-->
+                        <td>{{aluno.nome}}</td> <!-- irá percorrer dentro do array de alunos e vai renderizar todos os alunos que tiver dentro montando dados dinêmicos -->
+                        <td>{{aluno.email}}</td> 
+                        <td>{{aluno.matricula}}</td> 
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        </div>
+
+        <script> /* aqui será vinculado o código VUEJS com a página HTML */
+            var app = new Vue({
+                el: "#app", /* #APP é um seletor CSS para o VueJS encontrar a div que tem a aplicação atraves do ID */
+                data: { 
+                    alunos: [ /* criando array de alunos */
+                    { nome: 'Rafaela Andrade', email: 'rafaela@gmail.com', matricula: '123456'},
+                    { nome: 'Jose Rosa', email: 'jose@gmail.com', matricula: '127456'},
+                    { nome: 'Ardalinda Andrade', email: 'ardalinda@gmail.com', matricula: '123556'},
+                    { nome: 'Priscila Andrade', email: 'priscila@gmail.com', matricula: '1234511'}
+                ] 
+                
+                }
+            })
+        </script>
+
+        <style> /* definindo estilos com CSS para a tabela */
+            .table { /* estilizando toda a tabela */
+                margin-top: 20px; /* ajustando a margem */
+                width: 100%;/* para que a tabela ocupe todo espaço da página */
+                text-align: left; /* movendo todo texto para a esquerda */
+            }
+
+            .table th, .table td{ /* acessando o elemento filho para estilizar com CSS */
+                border-top: 1px solid #ccc; /* definindo uma borda no topo do elemento*/
+
+            }
+        </style>
+    </body>
+</html>
